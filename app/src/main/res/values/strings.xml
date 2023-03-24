@@ -1,4 +1,16 @@
 <resources>
     <string name="app_name">nMedia</string>
     <string name="nmedia">NMedia!!</string>
+    <string name="avtor" translatable="false">Нетология.Университет интернет-профессий будущего</string>
+    <string name="date_post" translatable="false">05 Марта 2023 15:24 </string>
+    <string name="content" translatable="false"> Привет, это новая Нетология! Когда-то Нетология начиналась с интенсивов по онлайн-маркетингу. Затем появились курсы по дизайну, разработке, аналитике и управлению. Мы растем сами и помогаем расти студентам: от новичков до увлеченных профессионалов. Но самое важное остаётся с нами: мы верим, что в каждом уже есть сила, которая заставит хотеть больше, целиться выше, бежать быстрее. Наша миссия - помочь встать на путь роста и начать цепочку перемен -> https://netology.ru</string>
+    <string name="like"> 10 </string>
+    <string name="viewing">2000</string>
+    <string name="share">20000</string>
+    <string name="likes">100000</string>
+    <string name="viewing_content">viewing</string>
+    <string name="netology">netology</string>
+    <string name="shareContetnt">share</string>
+    <string name="likesContent">likes</string>
+    <string name="menucontent">menuContent</string>
 </resources>

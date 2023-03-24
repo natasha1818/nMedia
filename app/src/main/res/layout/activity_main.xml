@@ -6,25 +6,169 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:scrollbarSize="@dimen/cardview_default_radius"
-        android:text="@string/nmedia"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:layout_width="84dp"
-        android:layout_height="127dp"
-        android:src="@drawable/baseline_favorite_24"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/avatarImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:paddingBottom="16dp"
+        app:layout_constraintEnd_toStartOf="@id/textView"
+        app:srcCompat="@drawable/netology"
+        android:contentDescription="@string/netology" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/avtor"
+        android:lines="1"
+        android:ellipsize="end"
+        app:layout_constraintStart_toEndOf="@id/avatarImageView"
+        app:layout_constraintTop_toTopOf="@id/avatarImageView"
+        app:layout_constraintEnd_toStartOf="@id/menuImegeView"
+       android:layout_marginStart="5dp"
+  />
+
+    <ImageView
+        android:id="@+id/menuImegeView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/textView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/baseline_more_vert_24"
+        android:contentDescription="@string/menucontent" />
+
+    <TextView
+        android:id="@+id/dataPostTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="@string/date_post"
+        app:layout_constraintTop_toBottomOf="@id/textView"
+        app:layout_constraintStart_toStartOf="@id/textView"
+        />
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="avatarImageView,dataPostTextView,menuImegeView"/>
+
+    <TextView
+        android:id="@+id/contentTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/content"
+        app:layout_constraintTop_toBottomOf="@id/barrier"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="16dp"
+        android:paddingBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@id/barrier2"
+        />
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+
+        app:constraint_referenced_ids="contentTextView"
+        />
+
+    <ImageView
+        android:id="@+id/likeImageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/baseline_favorite_border_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/barrier2"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/likesContent" />
+    <TextView
+        android:id="@+id/likeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLength="4"
+        android:text="@string/likes"
+        app:layout_constraintStart_toEndOf="@id/likeImageView2"
+        app:layout_constraintTop_toBottomOf="@id/barrier2"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+
+/>
+
+    <ImageView
+        android:id="@+id/shareImageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/baseline_share_24"
+        app:layout_constraintStart_toEndOf="@id/likeTextView"
+        android:layout_marginStart="16dp"
+        app:layout_constraintTop_toBottomOf="@id/barrier2"
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/shareContetnt" />
+
+    <TextView
+        android:id="@+id/shareTextView"
+        android:layout_width="wrap_content"
+        android:maxLength="4"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/share"
+        app:layout_constraintStart_toEndOf="@id/shareImageView3"
+        app:layout_constraintTop_toBottomOf="@id/barrier2"
+        app:srcCompat="@string/like"
+
+        />
+
+    <TextView
+        android:id="@+id/viewingTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLength="4"
+        android:text="@string/viewing"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/barrier2"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+
+        />
+
+    <ImageView
+        android:id="@+id/viewingImageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/barrier2"
+        app:layout_constraintEnd_toStartOf="@id/viewingTextView"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        app:srcCompat="@drawable/baseline_visibility_24"
+        android:contentDescription="@string/viewing_content" />
+
+       <View
+           android:id="@+id/redLine"
+           app:layout_constraintTop_toBottomOf="@id/likeImageView2"
+           android:layout_marginTop="24dp"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+             android:background="@color/color_line"
+           app:layout_constraintStart_toStartOf="@id/likeImageView2"
+           app:layout_constraintEnd_toEndOf="@id/viewingTextView"
+           />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

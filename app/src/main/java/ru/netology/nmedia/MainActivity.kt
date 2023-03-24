@@ -1,7 +1,9 @@
 package ru.netology.nmedia
 
-import androidx.appcompat.app.AppCompatActivity
+import android.icu.text.CompactDecimalFormat
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -9,4 +11,5 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
     }
+
 }
