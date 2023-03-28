@@ -28,11 +28,11 @@
         android:text="@string/avtor"
         android:lines="1"
         android:ellipsize="end"
-        app:layout_constraintStart_toEndOf="@id/avatarImageView"
+               app:layout_constraintStart_toEndOf="@id/avatarImageView"
         app:layout_constraintTop_toTopOf="@id/avatarImageView"
         app:layout_constraintEnd_toStartOf="@id/menuImegeView"
-       android:layout_marginStart="5dp"
-  />
+        android:layout_marginStart="5dp"
+        />
 
     <ImageView
         android:id="@+id/menuImegeView"
@@ -53,7 +53,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:text="@string/date_post"
+        android:text="@string/datePost"
         app:layout_constraintTop_toBottomOf="@id/textView"
         app:layout_constraintStart_toStartOf="@id/textView"
         />
@@ -62,7 +62,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:barrierDirection="bottom"
-        app:constraint_referenced_ids="avatarImageView,dataPostTextView,menuImegeView"/>
+        app:constraint_referenced_ids="dataPostTextView,avatarImageView,menuImegeView"/>
 
     <TextView
         android:id="@+id/contentTextView"
@@ -83,8 +83,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:barrierDirection="bottom"
-
         app:constraint_referenced_ids="contentTextView"
+
         />
 
     <ImageView
@@ -108,7 +108,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
 
-/>
+        />
 
     <ImageView
         android:id="@+id/shareImageView3"
@@ -158,17 +158,6 @@
         android:layout_marginEnd="8dp"
         app:srcCompat="@drawable/baseline_visibility_24"
         android:contentDescription="@string/viewing_content" />
-
-       <View
-           android:id="@+id/redLine"
-           app:layout_constraintTop_toBottomOf="@id/likeImageView2"
-           android:layout_marginTop="24dp"
-            android:layout_width="0dp"
-            android:layout_height="2dp"
-             android:background="@color/color_line"
-           app:layout_constraintStart_toStartOf="@id/likeImageView2"
-           app:layout_constraintEnd_toEndOf="@id/viewingTextView"
-           />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
