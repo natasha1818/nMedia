@@ -1,9 +1,9 @@
 package ru.netology.nmedia
 
-import android.icu.text.CompactDecimalFormat
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import ru.netology.nmedia.databinding.ActivityMainBinding
+import ru.netology.nmedia.dto.Post
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,14 +17,17 @@ class MainActivity : AppCompatActivity() {
             contentPost = "Привет, это новая Нетология! Когда-то Нетология начиналась с интенсивов по онлайн-маркетингу. Затем появились курсы по дизайну, разработке, аналитике и управлению. Мы растем сами и помогаем расти студентам: от новичков до увлеченных профессионалов. Но самое важное остаётся с нами: мы верим, что в каждом уже есть сила, которая заставит хотеть больше, целиться выше, бежать быстрее. Наша миссия - помочь встать на путь роста и начать цепочку перемен -> https://netology.ru",
             likesByMe = false,
             likedCount = 999,
-            shareCount = 8555_000
+            shareCount = 8599_999,
+            viewingCount = 2000
                 )
+
         with(binding){
             textView.text = post.author
             dataPostTextView.text= post.dataPost
             contentTextView.text=post.contentPost
-            likeTextView.text = shortNumber(post.likedCount)
-           shareTextView.text = shortNumber(post.shareCount)
+            likeTextView.text = ShotNumber.shortNumber(post.likedCount)
+           shareTextView.text = ShotNumber.shortNumber(post.shareCount)
+            viewingTextView.text= ShotNumber.shortNumber(post.viewingCount)
 
             if (post.likesByMe){
                 likeImageView2.setImageResource(R.drawable.ic_liked_24)
@@ -36,7 +39,7 @@ class MainActivity : AppCompatActivity() {
                 }else{
                     post.likedCount-1
                 }
-                likeTextView.text = shortNumber(post.likedCount)
+                likeTextView.text = ShotNumber.shortNumber(post.likedCount)
 
                 likeImageView2.setImageResource(if (post.likesByMe){
                     R.drawable.ic_liked_24
@@ -47,7 +50,7 @@ class MainActivity : AppCompatActivity() {
             }
           shareImageView3.setOnClickListener {
               post.shareCount++
-              shareTextView.text= shortNumber(post.shareCount)
+              shareTextView.text= ShotNumber.shortNumber(post.shareCount)
           }
 
 
