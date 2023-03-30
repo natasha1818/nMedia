@@ -11,28 +11,27 @@
         android:id="@+id/avatarImageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
+        android:contentDescription="@string/netology"
         android:paddingBottom="16dp"
         app:layout_constraintEnd_toStartOf="@id/textView"
-        app:srcCompat="@drawable/netology"
-        android:contentDescription="@string/netology" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/netology" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/avtor"
-        android:lines="1"
-        android:ellipsize="end"
-               app:layout_constraintStart_toEndOf="@id/avatarImageView"
-        app:layout_constraintTop_toTopOf="@id/avatarImageView"
-        app:layout_constraintEnd_toStartOf="@id/menuImegeView"
         android:layout_marginStart="5dp"
-        />
+        android:ellipsize="end"
+        android:lines="1"
+        android:text="@string/avtor"
+        app:layout_constraintEnd_toStartOf="@id/menuImegeView"
+        app:layout_constraintStart_toEndOf="@id/avatarImageView"
+        app:layout_constraintTop_toTopOf="@id/avatarImageView" />
 
     <ImageView
         android:id="@+id/menuImegeView"
@@ -42,11 +41,11 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:background="@android:color/transparent"
+        android:contentDescription="@string/menucontent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/textView"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/baseline_more_vert_24"
-        android:contentDescription="@string/menucontent" />
+        app:srcCompat="@drawable/baseline_more_vert_24" />
 
     <TextView
         android:id="@+id/dataPostTextView"
@@ -54,30 +53,30 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:text="@string/datePost"
-        app:layout_constraintTop_toBottomOf="@id/textView"
         app:layout_constraintStart_toStartOf="@id/textView"
-        />
+        app:layout_constraintTop_toBottomOf="@id/textView" />
+
     <androidx.constraintlayout.widget.Barrier
         android:id="@+id/barrier"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:barrierDirection="bottom"
-        app:constraint_referenced_ids="dataPostTextView,avatarImageView,menuImegeView"/>
+        app:constraint_referenced_ids="dataPostTextView,avatarImageView,menuImegeView" />
 
     <TextView
         android:id="@+id/contentTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/content"
-        app:layout_constraintTop_toBottomOf="@id/barrier"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:paddingBottom="16dp"
+        android:text="@string/content"
         app:layout_constraintBottom_toTopOf="@id/barrier2"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/barrier" />
+
     <androidx.constraintlayout.widget.Barrier
         android:id="@+id/barrier2"
         android:layout_width="wrap_content"
@@ -91,22 +90,23 @@
         android:id="@+id/likeImageView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/baseline_favorite_border_24"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/barrier2"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:contentDescription="@string/likesContent" />
+        android:contentDescription="@string/likesContent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/barrier2"
+        app:srcCompat="@drawable/baseline_favorite_border_24" />
+
     <TextView
         android:id="@+id/likeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
         android:maxLength="4"
         android:text="@string/likes"
         app:layout_constraintStart_toEndOf="@id/likeImageView2"
         app:layout_constraintTop_toBottomOf="@id/barrier2"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
 
         />
 
@@ -114,20 +114,20 @@
         android:id="@+id/shareImageView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/baseline_share_24"
-        app:layout_constraintStart_toEndOf="@id/likeTextView"
         android:layout_marginStart="16dp"
-        app:layout_constraintTop_toBottomOf="@id/barrier2"
         android:layout_marginTop="16dp"
-        android:contentDescription="@string/shareContetnt" />
+        android:contentDescription="@string/shareContetnt"
+        app:layout_constraintStart_toEndOf="@id/likeTextView"
+        app:layout_constraintTop_toBottomOf="@id/barrier2"
+        app:srcCompat="@drawable/baseline_share_24" />
 
     <TextView
         android:id="@+id/shareTextView"
         android:layout_width="wrap_content"
-        android:maxLength="4"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
+        android:maxLength="4"
         android:text="@string/share"
         app:layout_constraintStart_toEndOf="@id/shareImageView3"
         app:layout_constraintTop_toBottomOf="@id/barrier2"
@@ -139,12 +139,12 @@
         android:id="@+id/viewingTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:maxLength="4"
         android:text="@string/viewing"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/barrier2"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="16dp"
 
         />
 
@@ -152,12 +152,12 @@
         android:id="@+id/viewingImageView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/barrier2"
-        app:layout_constraintEnd_toStartOf="@id/viewingTextView"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
-        app:srcCompat="@drawable/baseline_visibility_24"
-        android:contentDescription="@string/viewing_content" />
+        android:contentDescription="@string/viewing_content"
+        app:layout_constraintEnd_toStartOf="@id/viewingTextView"
+        app:layout_constraintTop_toBottomOf="@id/barrier2"
+        app:srcCompat="@drawable/baseline_visibility_24" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
