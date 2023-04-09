@@ -33,7 +33,7 @@
         app:layout_constraintStart_toEndOf="@id/avatarImageView"
         app:layout_constraintTop_toTopOf="@id/avatarImageView" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/menuImegeView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

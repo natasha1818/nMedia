@@ -13,4 +13,9 @@
     <string name="shareContetnt" translatable="false">share</string>
     <string name="likesContent" translatable="false">likes</string>
     <string name="menucontent" translatable="false">menuContent</string>
+    <string name="remove">Remove</string>
+    <string name="content_text">Content</string>
+    <string name="not_be_empty">Content must not be empty</string>
+    <string name="edit">Edit post</string>
+
 </resources>
