@@ -69,12 +69,8 @@ class MainActivity : AppCompatActivity() {
             }
         }
         activityMainBinding.notEdit.setOnClickListener {
-            with(activityMainBinding.content){
-                viewModel.notEdit(text.toString())
-                setText("")
-                clearFocus()
-                AndroidUtils.hideKeyboard(this)
-            }
+                 viewModel.notEdit()
+
         }
 
         viewModel.data.observe(this) { posts ->

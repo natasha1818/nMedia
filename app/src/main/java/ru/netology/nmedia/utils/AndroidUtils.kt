@@ -1,13 +1,13 @@
 package ru.netology.nmedia.utils
 
 import android.content.Context
-import android.view.View
 import android.view.inputmethod.InputMethodManager
+import android.widget.EditText
 
 object AndroidUtils {
-    fun hideKeyboard(view:View){
-       val inputMethodMeneger =
+    fun hideKeyboard(view: EditText){
+       val inputMethodManagerneger =
            view.context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-        inputMethodMeneger.hideSoftInputFromWindow(view.windowToken,0)
+        inputMethodManagerneger.hideSoftInputFromWindow(view.windowToken,0)
     }
 }

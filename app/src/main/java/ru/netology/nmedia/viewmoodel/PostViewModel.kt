@@ -36,7 +36,7 @@ class PostViewModel : ViewModel() {
     fun edit(post: Post){
         adited.value = post
     }
-    fun notEdit(content: String){
+    fun notEdit(){
         adited.value = empty
     }
     fun changeContent(content:String){

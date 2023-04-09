@@ -41,7 +41,6 @@ class PostViewHolder(
                               true}
                        R.id.edit ->{
                            listener.onEdit(post)
-
                            true
                        }
                         else -> false
