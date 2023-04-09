@@ -22,9 +22,9 @@ class MainActivity : AppCompatActivity() {
         val viewModel: PostViewModel by viewModels()
 
         val adapter = PostAdapter(
-            object:PostListener{
+            object : PostListener {
                 override fun onRemove(post: Post) {
-                   viewModel.removeById(post.idPost)
+                    viewModel.removeById(post.idPost)
                 }
 
                 override fun onLike(post: Post) {
@@ -41,8 +41,8 @@ class MainActivity : AppCompatActivity() {
 
             }
         )
-        viewModel.adited.observe(this){
-            if (it.idPost == 0L){
+        viewModel.adited.observe(this) {
+            if (it.idPost == 0L) {
                 activityMainBinding.notEdit.visibility = View.GONE
                 return@observe
             }
@@ -53,12 +53,13 @@ class MainActivity : AppCompatActivity() {
         }
 
         activityMainBinding.save.setOnClickListener {
-            with(activityMainBinding.content){
-              if(text.isNullOrBlank()){
+            with(activityMainBinding.content) {
+                if (text.isNullOrBlank()) {
                     Toast.makeText(
                         this@MainActivity,
                         context.getString(R.string.not_be_empty),
-                        Toast.LENGTH_SHORT).show()
+                        Toast.LENGTH_SHORT
+                    ).show()
                     return@setOnClickListener
                 }
                 viewModel.changeContent(text.toString())
@@ -69,7 +70,13 @@ class MainActivity : AppCompatActivity() {
             }
         }
         activityMainBinding.notEdit.setOnClickListener {
-                 viewModel.notEdit()
+            with(activityMainBinding.content) {
+                viewModel.notEdit()
+                setText("")
+                clearFocus()
+                AndroidUtils.hideKeyboard(this)
+            }
+
 
         }
 
