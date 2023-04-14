@@ -17,5 +17,6 @@
     <string name="content_text">Content</string>
     <string name="not_be_empty">Content must not be empty</string>
     <string name="edit">Edit post</string>
+    <string name="number">1000</string>
 
 </resources>
