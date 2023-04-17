@@ -19,7 +19,7 @@ class PostViewHolder(
             contentTextView.text = post.contentPost
             shareImageView3.text = ShotNumber.shortNumber(post.shareCount)
             viewingTextView.text = ShotNumber.shortNumber(post.viewingCount)
-            likeImageView2.isCheckable = post.likesByMe
+            likeImageView2.isChecked = post.likesByMe
             likeImageView2.text = ShotNumber.shortNumber(post.countLike)
             likeImageView2.setOnClickListener {
                 listener.onLike(post)
