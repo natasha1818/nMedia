@@ -1,5 +1,6 @@
 package ru.netology.nmedia.adapter
 
+import android.view.View
 import android.widget.PopupMenu
 import androidx.recyclerview.widget.RecyclerView
 import ru.netology.nmedia.R
@@ -16,6 +17,14 @@ class PostViewHolder(
         binding.apply {
             textView.text = post.author
             dataPostTextView.text = post.dataPost
+            video.text = post.video
+            if (post.video != null){
+                video.visibility = View.VISIBLE
+                videoPlay.visibility = View.VISIBLE
+            }else{
+                video.visibility = View.GONE
+                videoPlay.visibility = View.GONE
+            }
             contentTextView.text = post.contentPost
             shareImageView3.text = ShotNumber.shortNumber(post.shareCount)
             viewingTextView.text = ShotNumber.shortNumber(post.viewingCount)
@@ -24,8 +33,12 @@ class PostViewHolder(
             likeImageView2.setOnClickListener {
                 listener.onLike(post)
             }
+
             shareImageView3.setOnClickListener {
                 listener.onShare(post)
+            }
+            video.setOnClickListener {
+                listener.vidioPlay(post)
             }
             menuImegeView.setOnClickListener {
                 PopupMenu(it.context, it).apply {

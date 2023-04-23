@@ -6,4 +6,6 @@
     <string name="content_text">Текст</string>
     <string name="not_be_empty">Напишите, ну хоть что-то!!</string>
     <string name="edit">Редактировать</string>
+    <string name="cant_be_empty">Текст не может быть пустым</string>
+    <string name="vidioplay">vidioPlay</string>
 </resources>

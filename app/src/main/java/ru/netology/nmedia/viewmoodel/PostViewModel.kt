@@ -15,7 +15,9 @@ private val empty = Post(
     likesByMe = false,
     countLike = 0L,
     shareCount = 0L,
-    viewingCount = 0L
+    viewingCount = 0L,
+    video = null
+
 
 
 )

@@ -15,7 +15,8 @@ class PostRepositoryInMemory : PostRepository {
             likesByMe = false,
             countLike = 999,
             shareCount = 99,
-            viewingCount = 2000
+            viewingCount = 2000,
+            video = "https://www.youtube.com/watch?v=68hHXz6FT1U"
         ),
         Post(
             idPost = nextId++,
@@ -25,7 +26,8 @@ class PostRepositoryInMemory : PostRepository {
             likesByMe = false,
             countLike = 501,
             shareCount = 1_000,
-            viewingCount = 1
+            viewingCount = 1,
+            video = "https://www.youtube.com/watch?v=68hHXz6FT1U"
         ),
         Post(
             idPost = nextId++,
@@ -35,7 +37,9 @@ class PostRepositoryInMemory : PostRepository {
             likesByMe = false,
             countLike = 10_000_999,
             shareCount = 100,
-            viewingCount = 15
+            viewingCount = 15,
+            video = null
+
         ),
         Post(
             idPost = nextId++,
@@ -45,7 +49,8 @@ class PostRepositoryInMemory : PostRepository {
             likesByMe = false,
             countLike = 15,
             shareCount = 1,
-            viewingCount = 9
+            viewingCount = 9,
+            video = null
         ),
         Post(
             idPost = nextId++,
@@ -55,7 +60,8 @@ class PostRepositoryInMemory : PostRepository {
             likesByMe = false,
             countLike = 200,
             shareCount = 99,
-            viewingCount = 1_000
+            viewingCount = 1_000,
+            video = "https://www.youtube.com/watch?v=fMlMn2dIYUo"
         ),
         Post(
             idPost = nextId++,
@@ -65,7 +71,8 @@ class PostRepositoryInMemory : PostRepository {
             likesByMe = false,
             countLike = 1_000,
             shareCount = 700,
-            viewingCount = 999
+            viewingCount = 999,
+            video = null
         ),
         Post(
             idPost = nextId++,
@@ -75,7 +82,8 @@ class PostRepositoryInMemory : PostRepository {
             likesByMe = false,
             countLike = 15,
             shareCount = 15,
-            viewingCount = 20
+            viewingCount = 20,
+            video = null
         ),
         Post(
             idPost = nextId++,
@@ -85,7 +93,8 @@ class PostRepositoryInMemory : PostRepository {
             likesByMe = false,
             countLike = 99,
             shareCount = 100,
-            viewingCount = 555
+            viewingCount = 555,
+            video = null
         ),
         Post(
             idPost = nextId++,
@@ -95,7 +104,8 @@ class PostRepositoryInMemory : PostRepository {
             likesByMe = false,
             countLike = 888,
             shareCount = 888,
-            viewingCount = 888
+            viewingCount = 888,
+            video = "https://www.youtube.com/watch?v=fMlMn2dIYUo"
         )
 
     ).reversed()

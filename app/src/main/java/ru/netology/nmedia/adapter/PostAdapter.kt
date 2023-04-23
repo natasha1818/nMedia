@@ -13,6 +13,9 @@ interface PostListener{
     fun onShare(post: Post)
     fun onEdit(post: Post)
 
+    fun vidioPlay(post: Post)
+
+
 }
 class PostAdapter(
     private val listener: PostListener
