@@ -17,6 +17,7 @@ import ru.netology.nmedia.utils.AndroidUtils
 import ru.netology.nmedia.viewmoodel.PostViewModel
 
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val activityMainBinding = ActivityMainBinding.inflate(layoutInflater)
@@ -30,6 +31,7 @@ class MainActivity : AppCompatActivity() {
             viewModel.save()
 
         }
+
         val adapter = PostAdapter(
             object : PostListener {
                 override fun onRemove(post: Post) {
@@ -69,7 +71,14 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-    }}
+    }
+    override fun onResume() {
+        super.onResume()
+        val viewModel: PostViewModel by viewModels()
+        viewModel.notEdit()
+
+    }
+}
 
 
 

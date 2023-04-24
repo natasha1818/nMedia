@@ -1,3 +1,5 @@
+@file:Suppress("OVERRIDE_DEPRECATION")
+
 package ru.netology.nmedia.activity
 
 import android.app.Activity
@@ -6,10 +8,17 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.result.contract.ActivityResultContract
+import androidx.activity.viewModels
 import ru.netology.nmedia.R
 import ru.netology.nmedia.databinding.ActivityNewPostBinding
+import ru.netology.nmedia.viewmoodel.PostViewModel
+
 
 class NewPostActivity : AppCompatActivity() {
+
+    val viewModel: PostViewModel by viewModels()
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = ActivityNewPostBinding.inflate(layoutInflater)
@@ -24,6 +33,7 @@ class NewPostActivity : AppCompatActivity() {
             }
             finish()
         }
+
     }
     object Contract:ActivityResultContract<String,String?>(){
         override fun createIntent(context: Context, input: String) =
