@@ -17,13 +17,14 @@ import ru.netology.nmedia.utils.AndroidUtils
 import ru.netology.nmedia.viewmoodel.PostViewModel
 
 class MainActivity : AppCompatActivity() {
+    val viewModel: PostViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val activityMainBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(activityMainBinding.root)
 
-        val viewModel: PostViewModel by viewModels()
+
 
         val newPostContract = registerForActivityResult(NewPostActivity.Contract) { result ->
             result ?: return@registerForActivityResult
@@ -74,7 +75,6 @@ class MainActivity : AppCompatActivity() {
     }
     override fun onResume() {
         super.onResume()
-        val viewModel: PostViewModel by viewModels()
         viewModel.notEdit()
 
     }
