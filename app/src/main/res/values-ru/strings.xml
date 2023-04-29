@@ -8,4 +8,5 @@
     <string name="edit">Редактировать</string>
     <string name="cant_be_empty">Текст не может быть пустым</string>
     <string name="vidioplay">vidioPlay</string>
+    <string name="link_video">Ссылка на видео</string>
 </resources>

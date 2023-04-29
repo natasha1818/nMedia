@@ -13,6 +13,10 @@ class PostRepositoryInMemory (private val context: Context, ): PostRepository {
     private val fileName = "posts.json"
     private var nextId = 1L
     private var posts: List<Post> = emptyList()
+    set(value) {
+        field = value
+        sync()
+    }
     private val data = MutableLiveData(posts)
 
     init {
@@ -21,6 +25,9 @@ class PostRepositoryInMemory (private val context: Context, ): PostRepository {
             context.openFileInput(fileName).bufferedReader().use {
                 posts = gson.fromJson(/* json = */ it,/* typeOfT = */ type)
                 data.value = posts
+            }
+            if (posts.isNotEmpty()){
+                nextId = posts.first().idPost +1
             }
         }else{
            sync()

@@ -21,5 +21,6 @@
     <string name="cant_be_empty">Content must not be empty</string>
     <string name="add_buttom" translatable="false">add Buttom</string>
     <string name="vidioplay">vidioPlay</string>
+    <string name="link_video">Link video</string>
 
 </resources>
