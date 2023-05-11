@@ -20,20 +20,6 @@
         android:padding="16dp"
        />
 
-    <EditText
-        android:id="@+id/videoLink"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textMultiLine"
-        android:layout_marginTop="550dp"
-        android:hint="@string/link_video"
-        android:gravity="start"
-        android:importantForAutofill="no"
-        android:padding="16dp"
-        android:background="@color/material_dynamic_neutral_variant95"
-
-        />
-
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"

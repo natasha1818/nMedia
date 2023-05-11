@@ -1,10 +1,7 @@
 package ru.netology.nmedia.viewmoodel
 
 import android.app.Application
-import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.*
 import ru.netology.nmedia.dto.Post
 import ru.netology.nmedia.repository.PostRepository
 import ru.netology.nmedia.repository.PostRepositoryInMemory
@@ -27,6 +24,8 @@ class PostViewModel(application: Application): AndroidViewModel(application) {
     fun likeById(id: Long) = repository.likeById(id)
     fun shareById(id: Long) = repository.shareById(id)
     fun removeById(id: Long) = repository.removeById(id)
+
+
     val adited = MutableLiveData(empty)
     fun save(){
        adited.value?.let {
@@ -40,12 +39,14 @@ class PostViewModel(application: Application): AndroidViewModel(application) {
     fun notEdit(){
         adited.value = empty
     }
+
     fun changeContent(content:String){
         adited.value?.let {posts ->
            if(content != posts.contentPost){
                     adited.value = posts.copy(contentPost = content)
               }
         }
+
     }
 
 }

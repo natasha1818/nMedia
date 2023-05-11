@@ -83,6 +83,7 @@ class PostRepositoryInMemory (private val context: Context, ): PostRepository {
         data.value = posts
         sync()
         }
+
     private fun sync(){
         context.openFileOutput(fileName,Context.MODE_PRIVATE).bufferedWriter().use {
             it.write(gson.toJson(posts))

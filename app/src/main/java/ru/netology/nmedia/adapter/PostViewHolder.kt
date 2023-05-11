@@ -2,18 +2,22 @@ package ru.netology.nmedia.adapter
 
 import android.view.View
 import android.widget.PopupMenu
+import androidx.fragment.app.activityViewModels
+import androidx.navigation.Navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import ru.netology.nmedia.R
 import ru.netology.nmedia.ShotNumber
 import ru.netology.nmedia.databinding.CardPostBinding
 import ru.netology.nmedia.dto.Post
+import ru.netology.nmedia.viewmoodel.PostViewModel
 
 class PostViewHolder(
     private val binding: CardPostBinding,
     private val listener: PostListener
 
 ) : RecyclerView.ViewHolder(binding.root) {
-    fun bind(post: Post) {
+       fun bind(post: Post) {
         binding.apply {
             textView.text = post.author
             dataPostTextView.text = post.dataPost
@@ -40,6 +44,9 @@ class PostViewHolder(
             video.setOnClickListener {
                 listener.vidioPlay(post)
             }
+            binding.root.setOnClickListener {
+                listener.onDetielsPost(post)
+            }
             menuImegeView.setOnClickListener {
                 PopupMenu(it.context, it).apply {
                   inflate(R.menu.post_options)
@@ -61,4 +68,6 @@ class PostViewHolder(
 
         }
     }
+
+
 }

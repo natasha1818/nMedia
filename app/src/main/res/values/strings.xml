@@ -3,7 +3,7 @@
     <string name="nmedia">NMedia!!</string>
     <string name="avtor" translatable="false">Нетология.Университет интернет-профессий будущего</string>
     <string name="datePost" translatable="false">05 Марта 2023 15:24 </string>
-    <string name="content" translatable="false"> Привет, это новая Нетология! Когда-то Нетология начиналась с интенсивов по онлайн-маркетингу. Затем появились курсы по дизайну, разработке, аналитике и управлению. Мы растем сами и помогаем расти студентам: от новичков до увлеченных профессионалов. Но самое важное остаётся с нами: мы верим, что в каждом уже есть сила, которая заставит хотеть больше, целиться выше, бежать быстрее. Наша миссия - помочь встать на путь роста и начать цепочку перемен -> https://netology.ru</string>
+    <string name="content" translatable="false"> Привет, это новая Нетология! Когда-то Нетология начиналась с интенсивов по онлайн-маркетингу. Затем появились курсы по дизайну, разработке, аналитике и управлению. Мы растем сами и помогаем расти студентам: от новичков до увлеченных профессионалов. Но самое важное остаётся с нами: мы верим, что в каждом уже есть сила, которая заставит хотеть больше, целиться выше, бежать быстрее. Наша миссия - помочь встать на путь роста и начать цепочку перемен -> https://netology.ru </string>
     <string name="like" translatable="false"> 10 </string>
     <string name="viewing" translatable="false">2000</string>
     <string name="share" translatable="false">20000</string>
@@ -22,5 +22,7 @@
     <string name="add_buttom" translatable="false">add Buttom</string>
     <string name="vidioplay">vidioPlay</string>
     <string name="link_video">Link video</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
