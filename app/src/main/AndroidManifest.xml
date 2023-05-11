@@ -24,20 +24,6 @@
                 <data android:mimeType="text/plain" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".activity.NewPostFragment"
-            android:exported="true" />
-
-        <activity
-            android:name=".activity.FeedFragment"
-            android:exported="true">
-
-        </activity>
-        <activity
-            android:name=".activity.DetailsPostFragment"
-            android:exported="true">
-
-        </activity>
 
     </application>
 
