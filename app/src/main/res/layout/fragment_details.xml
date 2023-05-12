@@ -10,15 +10,7 @@
     android:orientation="horizontal"
     tools:context=".activity.DetailsPostFragment"
     >
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/postOne"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toTopOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        tools:layout_editor_absoluteX="0dp"
-        tools:listitem="@layout/card_post" />
+    <include layout="@layout/card_post"
+        android:id="@+id/postOne" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
