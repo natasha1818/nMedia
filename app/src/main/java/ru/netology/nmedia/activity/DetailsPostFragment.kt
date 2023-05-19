@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import ru.netology.nmedia.R
 import ru.netology.nmedia.adapter.PostListener
@@ -25,16 +25,17 @@ class DetailsPostFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val viewModel: PostViewModel by activityViewModels()
-        val binding = FragmentDetailsBinding.inflate(layoutInflater)
+        val viewModel: PostViewModel by viewModels(
+            ownerProducer = ::requireParentFragment)
+        val binding = FragmentDetailsBinding.inflate(inflater,container,false)
         val id = requireArguments().getString("idArg").let { requireNotNull(it) }
         viewModel.data.observe(viewLifecycleOwner) { posts ->
             val post = posts.find { it.idPost == id.toLong() }
             with(binding) {
                 post?.let {
                     PostViewHolder(
-                        binding.postOne,
-                        object : PostListener {
+                       binding.postOne,
+                       object : PostListener {
                             override fun onRemove(post: Post) {
                                 viewModel.removeById(post.idPost)
                                 findNavController().navigateUp()
@@ -45,7 +46,8 @@ class DetailsPostFragment : Fragment() {
                             }
 
                             override fun onShare(post: Post) {
-                                val intent = Intent().apply {
+
+                                 val intent = Intent().apply {
                                     action = Intent.ACTION_SEND
                                     putExtra(Intent.EXTRA_TEXT, post.contentPost)
                                     type = "text/plain"
@@ -53,6 +55,8 @@ class DetailsPostFragment : Fragment() {
                                 val startIntent =
                                     Intent.createChooser(intent, getString(R.string.nmedia))
                                 startActivity(startIntent)
+                                viewModel.shareById(post.idPost)
+
                             }
 
                             override fun onEdit(post: Post) {

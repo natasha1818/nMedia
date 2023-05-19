@@ -2,9 +2,10 @@ package ru.netology.nmedia.viewmoodel
 
 import android.app.Application
 import androidx.lifecycle.*
+import ru.netology.nmedia.db.AppDb
 import ru.netology.nmedia.dto.Post
 import ru.netology.nmedia.repository.PostRepository
-import ru.netology.nmedia.repository.PostRepositoryInMemory
+import ru.netology.nmedia.repository.PostRepositorySQLiteImpl
 
 private val empty = Post(
     idPost = 0L,
@@ -18,9 +19,11 @@ private val empty = Post(
     video = null
 )
 class PostViewModel(application: Application): AndroidViewModel(application) {
-    private val repository: PostRepository = PostRepositoryInMemory(application)
+    val repository: PostRepository = PostRepositorySQLiteImpl(
+        AppDb.getInstance(application).postDao
+    )
 
-    val data: LiveData<List<Post>> = repository.getData()
+    val data: LiveData<List<Post>> = repository.getAll()
     fun likeById(id: Long) = repository.likeById(id)
     fun shareById(id: Long) = repository.shareById(id)
     fun removeById(id: Long) = repository.removeById(id)

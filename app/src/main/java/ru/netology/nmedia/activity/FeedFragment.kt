@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import ru.netology.nmedia.R
 import ru.netology.nmedia.adapter.PostAdapter
@@ -16,9 +15,14 @@ import ru.netology.nmedia.adapter.PostListener
 import ru.netology.nmedia.databinding.FragmentFeedBinding
 import ru.netology.nmedia.dto.Post
 import ru.netology.nmedia.viewmoodel.PostViewModel
+import androidx.fragment.app.viewModels
+
 
 class FeedFragment : Fragment() {
-    val viewModel: PostViewModel by activityViewModels()
+    val viewModel: PostViewModel by viewModels(
+        ownerProducer = ::requireParentFragment
+    )
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -46,6 +50,7 @@ class FeedFragment : Fragment() {
                     }
                     val startIntent = Intent.createChooser(intent, getString(R.string.nmedia))
                     startActivity(startIntent)
+                    viewModel.shareById(post.idPost)
                 }
 
                 override fun onEdit(post: Post) {

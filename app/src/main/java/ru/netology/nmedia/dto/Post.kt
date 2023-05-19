@@ -9,10 +9,8 @@ data class Post(
     val countLike: Long,
     val shareCount: Long,
     val viewingCount: Long,
-    val video: String?
-) {
-
-}
+    val video: String?,
+)
 
 
 

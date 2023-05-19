@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import ru.netology.nmedia.databinding.FargmentNewPostBinding
 import ru.netology.nmedia.viewmoodel.PostViewModel
@@ -19,7 +20,9 @@ class NewPostFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val viewModel: PostViewModel by activityViewModels()
+       val viewModel: PostViewModel by viewModels(
+           ownerProducer = ::requireParentFragment
+       )
 
        val binding = FargmentNewPostBinding.inflate(layoutInflater, container,false)
 
