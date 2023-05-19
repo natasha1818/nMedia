@@ -75,12 +75,13 @@ class PostDaoImpl(private val db:SQLiteDatabase):PostDao {
     )
     }
 
-    override fun shareById(id: Long) {
+    override fun shareById(idPost: Long) {
         db.execSQL(
             """
                 UPDATE posts SET
                 shareCount = shareCount +1
-            """.trimIndent(), arrayOf(id)
+                WHERE idPost = ?;
+            """.trimIndent(), arrayOf(idPost)
         )
 
     }
