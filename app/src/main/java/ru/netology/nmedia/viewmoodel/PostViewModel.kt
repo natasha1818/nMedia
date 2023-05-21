@@ -9,8 +9,8 @@ import ru.netology.nmedia.repository.PostRepositorySQLiteImpl
 
 private val empty = Post(
     idPost = 0L,
-    author = "",
-    dataPost = "",
+    author = "Me",
+    dataPost = "now",
     contentPost = "",
     likesByMe = false,
     countLike = 0L,
