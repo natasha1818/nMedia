@@ -67,6 +67,7 @@ class FeedFragment : Fragment() {
                 }
 
                 override fun onDetielsPost(post: Post) {
+                     viewModel.viewingById(post.idPost)
                      findNavController().navigate(R.id.action_feedFragment_to_ditailsPostFragment,
                      bundleOf("idArg" to post.idPost.toString())
                      )

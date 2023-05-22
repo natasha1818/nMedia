@@ -7,26 +7,38 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="620dp"
+        android:orientation="vertical"
+        android:gravity="center">
+
+
     <EditText
-        android:inputType="textMultiLine"
         android:id="@+id/content"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="558dp"
         android:background="@android:color/transparent"
         android:gravity="start"
         android:hint="@string/content_text"
         android:importantForAutofill="no"
-         android:layout_marginBottom="56dp"
+        android:inputType="textMultiLine"
         android:padding="16dp"
-       />
+        />
 
-    <androidx.core.widget.NestedScrollView
+
+    <EditText
+        android:id="@+id/videoLink"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:clipToPadding="false"
-        android:contentDescription="@string/add_buttom"
-        android:paddingBottom="100dp"
-        tools:ignore="MissingClass" />
+        android:layout_height="60dp"
+        android:background="@color/material_dynamic_neutral_variant95"
+        android:gravity="start"
+        android:hint="@string/link_video"
+        android:importantForAutofill="no"
+        android:inputType="textMultiLine"
+        android:padding="16dp"
+        />
+    </LinearLayout>
 
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/bottomAppBar"
@@ -45,3 +57,4 @@
         android:contentDescription="@string/add_buttom" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
+

@@ -31,4 +31,8 @@ class PostRepositorySQLiteImpl (
       dao.save(PostEntity.fromDto(post))
     }
 
+    override fun viewingById(id: Long) {
+        dao.viewingById(id)
+    }
+
 }

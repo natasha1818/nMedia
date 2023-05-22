@@ -29,6 +29,9 @@ class NewPostFragment : Fragment() {
        arguments?.let {
            val text = it.getString("textArg", null)
            binding.content.setText(text)
+           val vidiotext = it.getString("vidioArg", null)
+           binding.videoLink.setText(vidiotext)
+
        }
 
 

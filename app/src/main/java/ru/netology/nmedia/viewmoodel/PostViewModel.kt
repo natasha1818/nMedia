@@ -27,6 +27,7 @@ class PostViewModel(application: Application): AndroidViewModel(application) {
     fun likeById(id: Long) = repository.likeById(id)
     fun shareById(id: Long) = repository.shareById(id)
     fun removeById(id: Long) = repository.removeById(id)
+    fun viewingById(id: Long) = repository.viewingById(id)
 
 
     val adited = MutableLiveData(empty)
