@@ -57,7 +57,7 @@ class FeedFragment : Fragment() {
                     viewModel.edit(post)
                     findNavController().navigate(
                         R.id.action_feedFragment_to_newPostFragment5,
-                        bundleOf("textArg" to post.contentPost)
+                        bundleOf("textArg" to post.contentPost, "vidioArg" to post.video)
                     )
                 }
 

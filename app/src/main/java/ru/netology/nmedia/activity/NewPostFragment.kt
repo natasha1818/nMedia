@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
@@ -35,10 +36,13 @@ class NewPostFragment : Fragment() {
        }
 
 
+
+
         binding.addButton.setOnClickListener {
             if (!binding.content.text.isNullOrBlank()) {
+                val vidiotext = binding.videoLink.text.toString()
                 val text = binding.content.text.toString()
-                viewModel.changeContent(text)
+                viewModel.changeContent(text,vidiotext)
                 viewModel.save()}
             findNavController().navigateUp()
         }

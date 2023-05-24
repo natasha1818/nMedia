@@ -9,8 +9,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import com.google.android.material.snackbar.Snackbar
 import ru.netology.nmedia.R
-import ru.netology.nmedia.R.id.feedFragment
-import ru.netology.nmedia.R.id.nav_host_fragment_container
+import ru.netology.nmedia.R.id.*
 import ru.netology.nmedia.databinding.ActivityAppBinding
 
 
@@ -24,13 +23,14 @@ class appActivity : AppCompatActivity() {
                 return@let
             }
             val content = intent.getStringExtra(Intent.EXTRA_TEXT)
-            if (content?.isNotBlank() !=true) {
+            if (content?.isNotEmpty() !=true) {
                 return@let
             }
             val navController = binding.navHostFragmentContainer.getFragment<NavHostFragment>().navController
-            intent.removeExtra(Intent.EXTRA_TEXT)
+            intent.removeExtra(/* name = */ Intent.EXTRA_TEXT)
               navController.navigate(
-                    R.id.action_feedFragment_to_newPostFragment5, bundleOf("textArg" to content)
+                  action_feedFragment_to_newPostFragment5, bundleOf("textArg" to content, "vidioArg" to video)
+
                 )
         }
     }

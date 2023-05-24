@@ -44,10 +44,10 @@ class PostViewModel(application: Application): AndroidViewModel(application) {
         adited.value = empty
     }
 
-    fun changeContent(content:String){
+    fun changeContent(content:String, video:String){
         adited.value?.let {posts ->
            if(content != posts.contentPost){
-                    adited.value = posts.copy(contentPost = content)
+                    adited.value = posts.copy(contentPost = content, video = video)
               }
         }
 
