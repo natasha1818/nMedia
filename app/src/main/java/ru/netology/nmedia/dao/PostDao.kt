@@ -39,10 +39,9 @@ interface PostDao {
     )
     fun viewingById(idPost:Long)
 
-    @Query("UPDATE PostEntity SET contentPost = :text WHERE idPost = :idPost")
-    fun updateContentById(idPost:Long, text:String)
-    fun save(post: PostEntity) = if (post.idPost ==0L) insert(post) else updateContentById(post.idPost, post.contentPost,
-        )
+    @Query("UPDATE PostEntity SET contentPost = :text, video = :videoText WHERE idPost = :idPost")
+    fun updateContentById(idPost:Long, text:String, videoText:String)
+    fun save(post: PostEntity) = if (post.idPost ==0L) insert(post) else updateContentById(post.idPost, post.contentPost, post.video.toString() )
 
 
 
