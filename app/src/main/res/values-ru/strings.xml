@@ -9,4 +9,6 @@
     <string name="cant_be_empty">Текст не может быть пустым</string>
     <string name="vidioplay">vidioPlay</string>
     <string name="link_video">Ссылка на видео</string>
+    <string name="notification_user_new_post">Автор  %1$s опубликовал новый пост:</string>
+
 </resources>

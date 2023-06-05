@@ -16,7 +16,7 @@ private val empty = Post(
     countLike = 0L,
     shareCount = 0L,
     viewingCount = 0L,
-    video = null
+    video = null,
 )
 class PostViewModel(application: Application): AndroidViewModel(application) {
     val repository: PostRepository = PostRepositorySQLiteImpl(
@@ -44,10 +44,10 @@ class PostViewModel(application: Application): AndroidViewModel(application) {
         adited.value = empty
     }
 
-    fun changeContent(content:String, video:String){
+    fun changeContent(content:String){
         adited.value?.let {posts ->
            if(content != posts.contentPost){
-                    adited.value = posts.copy(contentPost = content, video = video)
+                    adited.value = posts.copy(contentPost = content)
               }
         }
 
