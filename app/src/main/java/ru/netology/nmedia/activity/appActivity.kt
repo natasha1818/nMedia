@@ -19,7 +19,7 @@ class appActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            requestPermissions(arrayOf(POST_NOTIFICATIONS), 100500)
+            requestPermissions(arrayOf(POST_NOTIFICATIONS), 100503)
         }
         val binding = ActivityAppBinding.inflate(layoutInflater)
         setContentView(binding.root)

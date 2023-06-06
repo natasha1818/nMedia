@@ -40,8 +40,7 @@ class FCMService : FirebaseMessagingService() {
             try {
                 when (Action.valueOf(it)) {
                     Action.NEWPOST -> handleLike(gson.fromJson(message.data[content], NewPost::class.java))
-                    else -> return@let
-                }
+                   }
             }catch (e:Exception)   {
                 println("Catched")
             }
